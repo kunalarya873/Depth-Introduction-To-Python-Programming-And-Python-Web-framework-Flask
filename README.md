@@ -1,7 +1,7 @@
 # Depth-Introduction-To-Python-Programming-And-Python-Web-framework-Flask
 <!-- Add your project banner here -->
 <p align="center">
-  <img src="your-banner-image-url" alt="Python and Flask Depth Introduction">
+  <img src="https://realpython.com/cdn-cgi/image/width=1920,format=auto/https://files.realpython.com/media/The-Ultimate-Flask-Front-End_Watermarked.25480b03952e.jpg" alt="Python and Flask Depth Introduction">
 </p>
 
 <!-- Project Title -->

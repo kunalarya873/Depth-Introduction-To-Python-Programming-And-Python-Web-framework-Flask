@@ -20,7 +20,7 @@ class Todo(db.Model):
 def hello_world():
     if request.method == 'POST':
         todo_title = request.form['title']
-        desc_todo =request.form['desc']
+        desc_todo = request.form['desc']
         data = Todo(title=todo_title, desc=desc_todo)
         db.session.add(data)
         db.session.commit()
@@ -31,6 +31,20 @@ def hello_world():
     # db.session.add(new_todo)
     # db.session.commit()
     return render_template('index.html', alltodo=alltodo)
+
+@app.route('/update/<int:sno>', methods=['GET', 'POST'])
+def update(sno):
+    if request.method == 'POST':
+        todo_title = request.form['title']
+        desc_todo = request.form['desc']
+        data = Todo.query.filter_by(sno=sno).first()
+        data.title = todo_title
+        data.desc = desc_todo
+        db.session.add(data)
+        db.session.commit()
+        return redirect("/")
+    todo = Todo.query.filter_by(sno=sno).first()
+    return render_template('update.html', todo=todo)
 
 @app.route('/delete/<int:sno>')
 def delete(sno):
